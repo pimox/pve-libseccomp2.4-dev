@@ -1,0 +1,21 @@
+Source: pve-libseccomp2.4-dev
+Section: libs
+Priority: optional
+Maintainer: Proxmox Support Team <support@proxmox.com>
+Build-Depends: debhelper (>= 10~),
+               linux-libc-dev,
+Standards-Version: 3.9.7
+Homepage: https://github.com/seccomp/libseccomp
+
+Package: pve-libseccomp2.4-dev
+Section: libdevel
+Architecture: linux-any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Suggests: seccomp
+Description: libseccomp version 2.4 development file for static linking
+ This library provides a high level interface to constructing, analyzing
+ and installing seccomp filters via a BPF passed to the Linux Kernel's
+ prctl() syscall.
+ .
+ This package contains the development files.

@@ -1,0 +1,5 @@
+pve-libseccomp2.4-dev (2.4.1+git13-1) pve; urgency=medium
+
+  * packaging version 2.4.1 for seccomp notify support in lxc
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 03 Jul 2019 11:54:42 +0200

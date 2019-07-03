@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# Enable verbose build details.
+export V=1
+
+include /usr/share/dpkg/architecture.mk
+
+%:
+	dh $@
+
+override_dh_autoreconf:
+	sed -i -e 's/AC_INIT(\[libseccomp\], \[0\.0\.0\])/AC_INIT([libseccomp], [2.4.1])/' configure.ac
+	dh_autoreconf --as-needed
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+	  --disable-python \
+	  --disable-shared \
+	  --enable-static \
+	  --libdir=/usr/lib/$(DEB_HOST_MULTIARCH)/pve-libseccomp2.4 \
+	  --includedir=/usr/lib/pve-libseccomp2.4/include
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -f regression.out
+
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/tmp

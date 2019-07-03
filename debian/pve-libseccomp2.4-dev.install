@@ -1,0 +1,3 @@
+usr/lib/pve-libseccomp2.4/include/*
+usr/lib/*/pve-libseccomp2.4/lib*.a
+usr/lib/*/pve-libseccomp2.4/lib*.la
